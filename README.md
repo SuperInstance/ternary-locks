@@ -155,6 +155,14 @@ The graveyard enables **post-mortem analysis**: tracking which patterns were str
 | `ternary-bayesian` | Locks define patterns; Bayesian inference reasons about them |
 | `ternary-attention` | Attention patterns can be captured as lock constraints |
 
+## Known Limitations
+
+- **`compress_locks` is greedy O(n²).** The compression algorithm merges overlapping locks greedily and does not find the optimal minimal set.
+- **`transfer_score` is ad-hoc.** The formula counts pairs with any non-zero agreement, weighting a single matching position the same as full agreement. It is not a rigorous cross-domain similarity metric.
+- **`detect_critical_mass` uses a heuristic.** For pattern spaces larger than ~8 positions, the coverage estimate `locks * 3 / length` has no theoretical basis.
+- **`Graveyard::half_life` computes median burial step**, not a true statistical half-life (exponential decay rate).
+- **No cycle detection in LockGraph evaluation.** While `has_cycles()` exists, applying locks with circular dependencies will silently produce incorrect results.
+
 ## License
 
 MIT
