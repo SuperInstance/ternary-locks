@@ -1,0 +1,6 @@
+[package]
+name = "ternary-locks"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Lock algebra inspired by Oracle1's research"
