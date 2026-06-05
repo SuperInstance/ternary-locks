@@ -166,3 +166,11 @@ The graveyard enables **post-mortem analysis**: tracking which patterns were str
 ## License
 
 MIT
+
+## See Also
+- **ternary-sync** — related
+- **ternary-distributed** — related
+- **ternary-consensus** — related
+- **ternary-room** — related
+- **ternary-protocol** — related
+
